@@ -16,7 +16,7 @@ object Versions {
 
         const val GRADLE_TOOLS = "7.4.0"
         const val KOTLIN_GRADLE = "1.7.20"
-        const val KOTLIN_JVM = "1.8.20"
+        const val KOTLIN_JVM = "1.8.10"
     }
 
     const val COIL = "2.2.2"
@@ -24,7 +24,8 @@ object Versions {
     object Compose {
         const val HILT = "1.0.0"
         const val BOM = "2023.04.00"
-        const val BUILD = "1.4.0"
+        const val BUILD = "1.4.4"
+        const val GOOGLE_FONTS = "1.4.0"
         const val LIFECYCLE = "2.6.1"
         const val NAVIGATION = "2.5.3"
     }

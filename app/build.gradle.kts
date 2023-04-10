@@ -79,6 +79,7 @@ dependencies {
     implementation(Libraries.AndroidX.Glance)
     implementation(Libraries.AndroidX.Room.Runtime)
     implementation(platform(Libraries.Compose.BOM))
+    implementation(Libraries.Compose.Google_Fonts)
     implementation(Libraries.Compose.UI)
     implementation(Libraries.Compose.Graphics)
     implementation(Libraries.Compose.Preview)

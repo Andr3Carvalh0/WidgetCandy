@@ -15,6 +15,7 @@ object Libraries {
     object Compose {
         const val Activity = "androidx.activity:activity-compose:${Versions.AndroidX.ACTIVITY}"
         const val BOM = "androidx.compose:compose-bom:${Versions.Compose.BOM}"
+        const val Google_Fonts = "androidx.compose.ui:ui-text-google-fonts:${Versions.Compose.GOOGLE_FONTS}"
         const val UI = "androidx.compose.ui:ui"
         const val Material3 = "androidx.compose.material3:material3"
         const val Graphics = "androidx.compose.ui:ui-graphics"

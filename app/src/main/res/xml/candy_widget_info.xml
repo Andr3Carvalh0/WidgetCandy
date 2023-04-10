@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:configure="pt.andre.widgetcandy.configuration.ConfigurationActivity"
+    android:description="@string/widget_description"
+    android:widgetFeatures="reconfigurable"
+    android:initialKeyguardLayout="@layout/candy_widget"
+    android:initialLayout="@layout/candy_widget"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:previewImage="@drawable/ic_launcher_foreground"
+    android:previewLayout="@layout/candy_widget"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="3"
+    android:targetCellHeight="1"
+    android:updatePeriodMillis="86400000"
+    android:widgetCategory="home_screen" />

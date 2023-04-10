@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WidgetCandy</string>
+    <string name="placeholder_widget_text"></string>
+    <string name="widget_description">Add a category widget to your homescreen</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
 </resources>
