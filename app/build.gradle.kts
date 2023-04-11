@@ -39,7 +39,7 @@ android {
             isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -75,9 +75,9 @@ android {
 dependencies {
     implementation(Libraries.Compose.Activity)
     implementation(Libraries.AndroidX.Core)
+    implementation(Libraries.AndroidX.Datastore)
     implementation(Libraries.AndroidX.Lifecycle)
     implementation(Libraries.AndroidX.Glance)
-    implementation(Libraries.AndroidX.Room.Runtime)
     implementation(platform(Libraries.Compose.BOM))
     implementation(Libraries.Compose.Google_Fonts)
     implementation(Libraries.Compose.UI)
@@ -89,13 +89,11 @@ dependencies {
     implementation(Libraries.Hilt.Navigation)
 
     kapt(Libraries.Hilt.Compiler)
-    kapt(Libraries.AndroidX.Room.Compiler)
 
     debugImplementation(Libraries.Compose.Tooling)
     debugImplementation(Libraries.Compose.Test.Manifest)
 
     testImplementation(Libraries.JUnit)
-    testImplementation(Libraries.AndroidX.Room.Testing)
     testImplementation(Libraries.Kotlin.Test.Coroutines)
     testImplementation(Libraries.Mockk)
     testImplementation(Libraries.Turbine)

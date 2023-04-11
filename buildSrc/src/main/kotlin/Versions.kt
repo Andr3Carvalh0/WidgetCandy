@@ -5,8 +5,8 @@ object Versions {
     object AndroidX {
         const val ACTIVITY = "1.7.0"
         const val CORE = "1.10.0"
+        const val DATASTORE = "1.0.0"
         const val LIFECYCLE = "2.6.1"
-        const val ROOM = "2.5.1"
         const val GLANCE = "1.0.0-alpha05"
     }
 

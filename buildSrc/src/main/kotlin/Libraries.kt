@@ -2,14 +2,9 @@ object Libraries {
 
     object AndroidX {
         const val Core = "androidx.core:core-ktx:${Versions.AndroidX.CORE}"
+        const val Datastore = "androidx.datastore:datastore-preferences:${Versions.AndroidX.DATASTORE}"
         const val Lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.AndroidX.LIFECYCLE}"
         const val Glance = "androidx.glance:glance-appwidget:${Versions.AndroidX.GLANCE}"
-
-        object Room {
-            const val Runtime = "androidx.room:room-runtime:${Versions.AndroidX.ROOM}"
-            const val Compiler = "androidx.room:room-compiler:${Versions.AndroidX.ROOM}"
-            const val Testing = "androidx.room:room-testing:${Versions.AndroidX.ROOM}"
-        }
     }
 
     object Compose {
