@@ -4,7 +4,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 
-internal data class CandyOption(
+internal data class WidgetOptions(
     val key: Preferences.Key<*>,
     val default: Any,
 )
@@ -15,30 +15,30 @@ internal const val IS_BOLD_KEY = "bold"
 internal const val IS_ITALIAN_KEY = "italian"
 internal const val IS_UNDERLINE_KEY = "underline"
 
+internal fun preferences(): List<WidgetOptions> = stringPreferences() + booleanPreferences()
+
 private fun stringPreferences() = listOf(
-    CandyOption(
+    WidgetOptions(
         key = stringPreferencesKey(TEXT_KEY),
         default = "",
     ),
-    CandyOption(
+    WidgetOptions(
         key = stringPreferencesKey(TYPEFACE_KEY),
         default = "",
     ),
 )
 
 private fun booleanPreferences() = listOf(
-    CandyOption(
+    WidgetOptions(
         key = booleanPreferencesKey(IS_BOLD_KEY),
         default = false,
     ),
-    CandyOption(
+    WidgetOptions(
         key = booleanPreferencesKey(IS_ITALIAN_KEY),
         default = false,
     ),
-    CandyOption(
+    WidgetOptions(
         key = booleanPreferencesKey(IS_UNDERLINE_KEY),
         default = false,
     ),
 )
-
-internal fun preferences(): List<CandyOption> = stringPreferences() + booleanPreferences()

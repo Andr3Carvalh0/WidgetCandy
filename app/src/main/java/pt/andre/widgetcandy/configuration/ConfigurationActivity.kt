@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import dagger.hilt.android.AndroidEntryPoint
-import pt.andre.widgetcandy.configuration.providers.ConfigurationViewModelFactory
+import pt.andre.widgetcandy.configuration.providers.ConfigurationViewModelProvider
 import pt.andre.widgetcandy.configuration.providers.factory
 import pt.andre.widgetcandy.configuration.ui.ConfigurationScreen
 import javax.inject.Inject
@@ -15,7 +15,7 @@ import javax.inject.Inject
 class ConfigurationActivity : ComponentActivity() {
 
     @Inject
-    internal lateinit var factory: ConfigurationViewModelFactory
+    internal lateinit var factory: ConfigurationViewModelProvider
 
     private val vm: ConfigurationViewModel by viewModels {
         factory(

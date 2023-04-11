@@ -6,12 +6,12 @@ import dagger.assisted.AssistedFactory
 import pt.andre.widgetcandy.configuration.ConfigurationViewModel
 
 @AssistedFactory
-internal interface ConfigurationViewModelFactory {
+internal interface ConfigurationViewModelProvider {
     fun create(widgetId: Int): ConfigurationViewModel
 }
 
 internal fun factory(
-    factory: ConfigurationViewModelFactory,
+    factory: ConfigurationViewModelProvider,
     widgetId: Int,
 ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

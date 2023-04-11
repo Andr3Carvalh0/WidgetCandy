@@ -22,9 +22,9 @@ dependencies {
 fun getAllSrcDirs(): List<File> {
     val sourceDirs = mutableListOf<File>()
     subprojects.forEach {
-        sourceDirs += file("${it.projectDir}/src/main/kotlin")
-        sourceDirs += file("${it.projectDir}/src/test/kotlin")
-        sourceDirs += file("${it.projectDir}/src/androidTest/kotlin")
+        sourceDirs += file("${it.projectDir}/src/main/java")
+        sourceDirs += file("${it.projectDir}/src/test/java")
+        sourceDirs += file("${it.projectDir}/src/androidTest/java")
     }
     return sourceDirs.filter { it.exists() }
 }
