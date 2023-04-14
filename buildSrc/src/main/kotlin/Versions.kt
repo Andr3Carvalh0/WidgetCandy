@@ -10,6 +10,10 @@ object Versions {
         const val GLANCE = "1.0.0-alpha05"
     }
 
+    object Accompanist {
+        const val PERMISSION = "0.30.1"
+    }
+
     object Build {
         val JAVA_VERSION = JavaVersion.VERSION_1_8
         const val JVM_TARGET = "1.8"

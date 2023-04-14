@@ -5,9 +5,12 @@ import androidx.datastore.preferences.core.MutablePreferences
 import androidx.datastore.preferences.core.Preferences
 import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.state.updateAppWidgetState
+import androidx.glance.state.PreferencesGlanceStateDefinition
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.channelFlow
 import pt.andre.widgetcandy.configuration.preferences
+import pt.andre.widgetcandy.utilities.time
 import javax.inject.Inject
 
 internal class WidgetConfigurationStorage @Inject constructor(
@@ -15,27 +18,27 @@ internal class WidgetConfigurationStorage @Inject constructor(
     private val manager: GlanceAppWidgetManager,
 ) {
 
-    private val items: MutableStateFlow<Map<Preferences.Key<*>, Any>> = MutableStateFlow(emptyMap())
-
-    suspend fun observe(widgetId: Int) = items.also { refresh(widgetId) }
-
-    suspend fun update(widgetId: Int, action: suspend (t: MutablePreferences) -> Unit) {
-        updateValues(
-            widgetId = widgetId,
-            action = { preferences ->
-                action(preferences)
-                refresh(widgetId)
-            },
-        )
-    }
-
-    private suspend fun refresh(widgetId: Int) =
-        updateValues(widgetId) { values ->
-            items.value = preferences().associate { option ->
-                option.key to values.asMap()
-                    .getOrElse(key = option.key, defaultValue = { option.default })
+    // Glance doesnt support updating values from the activity, so as an hack we have this 1
+    // second timer that refreshes the values previously obtained
+    suspend fun observe(widgetId: Int): Flow<Map<Preferences.Key<*>, Any>> = channelFlow {
+        time().collect {
+            updateValues(widgetId) { values ->
+                send(
+                    preferences().associate { option ->
+                        option.key to values.asMap()
+                            .getOrElse(key = option.key, defaultValue = { option.default })
+                    },
+                )
             }
         }
+    }
+
+    suspend inline fun <reified T> update(widgetId: Int, key: Preferences.Key<T>, value: T) {
+        updateValues(
+            widgetId = widgetId,
+            action = { preferences -> preferences[key] = value },
+        )
+    }
 
     private suspend fun updateValues(
         widgetId: Int,
@@ -44,6 +47,10 @@ internal class WidgetConfigurationStorage @Inject constructor(
         updateAppWidgetState(
             context = context,
             glanceId = manager.getGlanceIdBy(widgetId),
-        ) { action(it) }
+            definition = PreferencesGlanceStateDefinition,
+        ) {
+            it.toMutablePreferences()
+                .apply { action(this) }
+        }
     }
 }

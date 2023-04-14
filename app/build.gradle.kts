@@ -74,6 +74,7 @@ android {
 
 dependencies {
     implementation(Libraries.Compose.Activity)
+    implementation(Libraries.Accompanist.Permission)
     implementation(Libraries.AndroidX.Core)
     implementation(Libraries.AndroidX.Datastore)
     implementation(Libraries.AndroidX.Lifecycle)

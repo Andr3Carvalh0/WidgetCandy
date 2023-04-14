@@ -7,6 +7,10 @@ object Libraries {
         const val Glance = "androidx.glance:glance-appwidget:${Versions.AndroidX.GLANCE}"
     }
 
+    object Accompanist {
+        const val Permission = "com.google.accompanist:accompanist-permissions:${Versions.Accompanist.PERMISSION}"
+    }
+
     object Compose {
         const val Activity = "androidx.activity:activity-compose:${Versions.AndroidX.ACTIVITY}"
         const val BOM = "androidx.compose:compose-bom:${Versions.Compose.BOM}"
