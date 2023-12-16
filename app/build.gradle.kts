@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
-
 plugins {
     kotlin("kapt")
     id("com.android.application")
@@ -52,7 +50,7 @@ android {
         kotlinCompilerExtensionVersion = Versions.Compose.BUILD
     }
 
-    packagingOptions {
+    packaging {
         resources {
             resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }

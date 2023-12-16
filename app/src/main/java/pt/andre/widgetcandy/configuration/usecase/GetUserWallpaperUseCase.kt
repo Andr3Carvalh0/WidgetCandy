@@ -1,5 +1,6 @@
 package pt.andre.widgetcandy.configuration.usecase
 
+import android.annotation.SuppressLint
 import android.app.WallpaperManager
 import android.content.Context
 import android.graphics.Bitmap
@@ -11,11 +12,12 @@ internal class GetUserWallpaperUseCase @Inject constructor(
     @ApplicationContext private val context: Context,
 ) {
 
+    @SuppressLint("MissingPermission")
     @Suppress("SwallowedException")
     operator fun invoke(): Bitmap? = try {
         WallpaperManager.getInstance(context)
             .drawable
-            .toBitmapOrNull()
+            ?.toBitmapOrNull()
     } catch (e: SecurityException) {
         null
     }
