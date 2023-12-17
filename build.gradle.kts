@@ -7,11 +7,9 @@ plugins {
     id("com.google.dagger.hilt.android") version Versions.HILT apply false
 }
 
-tasks.withType<io.gitlab.arturbosch.detekt.Detekt> { jvmTarget = Versions.Build.JVM_TARGET }
-
 detekt {
     source = files(getAllSrcDirs())
-    config = files("${rootProject.projectDir}/detekt_configuration.yml")
+    config = files("${rootProject.projectDir}/detekt.yml")
     buildUponDefaultConfig = true
 }
 
