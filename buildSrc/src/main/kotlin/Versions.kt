@@ -15,11 +15,11 @@ object Versions {
     }
 
     object Build {
-        val JAVA_VERSION = JavaVersion.VERSION_1_8
-        const val JVM_TARGET = "1.8"
+        val JAVA_VERSION = JavaVersion.VERSION_17
+        const val JVM_TARGET = "17"
 
         const val GRADLE_TOOLS = "8.2.0"
-        const val KOTLIN_GRADLE = "1.7.20"
+        const val KOTLIN_GRADLE = "1.9.21"
         const val KOTLIN_JVM = "1.9.21"
     }
 
