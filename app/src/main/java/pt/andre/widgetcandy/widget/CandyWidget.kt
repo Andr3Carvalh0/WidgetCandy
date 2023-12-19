@@ -1,7 +1,6 @@
 package pt.andre.widgetcandy.widget
 
 import android.content.Context
-import androidx.compose.runtime.Composable
 import androidx.glance.GlanceId
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.provideContent
