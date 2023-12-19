@@ -6,8 +6,8 @@ object Versions {
         const val ACTIVITY = "1.8.2"
         const val CORE = "1.12.0"
         const val DATASTORE = "1.0.0"
-        const val LIFECYCLE = "2.6.1"
-        const val GLANCE = "1.0.0-alpha05"
+        const val LIFECYCLE = "2.6.2"
+        const val GLANCE = "1.0.0"
     }
 
     object Accompanist {
@@ -24,6 +24,7 @@ object Versions {
     }
 
     const val COIL = "2.2.2"
+    const val MATERIAL_COMPONENTS = "1.11.0"
 
     object Compose {
         const val HILT = "1.1.0"

@@ -86,6 +86,7 @@ dependencies {
     implementation(Libraries.Compose.Lifecycle)
     implementation(Libraries.Hilt.Core)
     implementation(Libraries.Hilt.Navigation)
+    implementation(Libraries.MaterialComponents)
 
     kapt(Libraries.Hilt.Compiler)
 

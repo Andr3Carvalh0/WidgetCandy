@@ -39,6 +39,8 @@ object Libraries {
 
     const val JUnit = "junit:junit:${Versions.JUnit.MAIN}"
 
+    const val MaterialComponents = "com.google.android.material:material:${Versions.MATERIAL_COMPONENTS}"
+
     object Kotlin {
         const val Coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.COROUTINES}"
 
